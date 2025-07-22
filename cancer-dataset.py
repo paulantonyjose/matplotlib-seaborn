@@ -30,11 +30,9 @@ plt.legend(loc='upper right')
 
 #4. Histogram of the distribution of the mean texture values of malignant and benign diagnosis
 
-plt.figure(figsize=(10, 6)) 
-sns.histplot(x='mean texture', data=df, hue='labelled_diagnosis', palette='Set2', kde=True)
-plt.title('Distribution of Mean Texture by Diagnosis')
-plt.xlabel('Mean Texture')
-plt.ylabel('Count')
-plt.legend(title='Diagnosis')
-plt.grid(True, linestyle='--', alpha=0.7)
+# 4. Plot with seaborn.histplot
+palette = {'malignant': '#E74C3C', 'benign': '#2ECC71'}
+sns.histplot(x='mean texture',hue='labelled_diagnosis',data=df ,bins=20, kde=True,palette=palette )
+# plt.title('Distribution of Age')
+plt.xlabel('mean texture values')
 plt.show()
