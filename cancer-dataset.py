@@ -36,3 +36,7 @@ sns.histplot(x='mean texture',hue='labelled_diagnosis',data=df ,bins=20, kde=Tru
 # plt.title('Distribution of Age')
 plt.xlabel('mean texture values')
 plt.show()
+
+#5. Scatter plot of , mean radius, mean smoothness, worst concavity
+scatter = df[['mean radius','mean smoothness','worst concavity']]
+sns.pairplot(scatter)
