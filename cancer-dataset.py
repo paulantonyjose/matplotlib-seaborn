@@ -32,7 +32,7 @@ plt.legend(loc='upper right')
 
 # 4. Plot with seaborn.histplot
 palette = {'malignant': '#E74C3C', 'benign': '#2ECC71'}
-sns.histplot(x='mean texture',hue='labelled_diagnosis',data=df ,bins=20, kde=True,palette=palette )
+sns.histplot(x='mean texture',hue='labelled_diagnosis',data=df ,bins=20, kde=True,palette=palette ,  multiple='stack',    )
 # plt.title('Distribution of Age')
 plt.xlabel('mean texture values')
 plt.show()
