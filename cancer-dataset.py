@@ -38,5 +38,11 @@ plt.xlabel('mean texture values')
 plt.show()
 
 #5. Scatter plot of , mean radius, mean smoothness, worst concavity
-scatter = df[['mean radius','mean smoothness','worst concavity']]
-sns.pairplot(scatter)
+scatter = df[['mean radius','mean smoothness','worst concavity','labelled_diagnosis']]
+sns.pairplot(scatter,palette='husl',hue='labelled_diagnosis')
+
+#6.box plot showing worst texture values for each diagnosis
+plt.figure(figsize=(9,9))
+flierprops = dict(marker='o', markerfacecolor='red', markersize=8, linestyle='none', markeredgecolor='black')
+sns.boxplot(x='worst texture',hue='labelled_diagnosis',palette='husl',data=df,     flierprops=flierprops,  # Customization here!
+)
